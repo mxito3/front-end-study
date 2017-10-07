@@ -1,0 +1,37 @@
+#top
+{
+    width:720px;
+    height:80px;
+    border: 2px solid #0bb3a6;
+}
+.wrapper
+{
+    position:relative;
+    top:10px;
+    width:720px;
+    height:80px;
+    border: 0px;
+}
+#bottom
+{
+    position:relative;/*相对其正常位置定位*/
+    top:20px;
+    width:720px;
+    height:80px;
+    border: 2px solid #16b30e;
+}
+#left
+{
+    width:150px;
+    height:80px;
+    border: solid 2px #040cb3;
+}
+#right
+{
+    position:relative;
+    left:160px;
+    top:-82px;
+    width:550px;
+    height:80px;
+    border: solid 2px #b3119f;
+}
