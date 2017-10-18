@@ -1,0 +1,17 @@
+
+input[type="submit"]
+{
+    padding: 30px 60px ;
+    background-color: blanchedalmond;
+}
+td{
+    display: inline-block;
+    position: relative;
+    top:5px;
+    right:5px;
+}
+.p
+{
+    padding-right: 25px;
+}
+
