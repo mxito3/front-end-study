@@ -33,12 +33,11 @@ runBall.int=setInterval("manageDraw();",runBall.t);
     //console.log("高度是："+runBall.circle.begin_x);
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
-    var color="#ff0000";
-    ctx.fillStyle(color);
+    ctx.fillStyle="#ff0000";
     ctx.beginPath();
     //console.log(runBall.circle.begin_x, runBall.now_y, runBall.radius, runBall.start_angle,runBall.size);
     ctx.arc(runBall.circle.begin_x,runBall.circle.now_y,runBall.circle.radius,runBall.circle.start_angle,runBall.circle.size);
-    ctx.stroke();
+    ctx.fill();
     //console.log("画了");
 }
     function clearCanvas()
@@ -103,16 +102,13 @@ function setMaxHeight()//每次到达最底部的时候更改
 {
    // console.log("设置了一次");
     var temp_height = (runBall.v_now*runBall.v_now)/(2*runBall.g);
-    console.log("设置了一次"+"速度是 "+runBall.v_now+"最大高度是:"+temp_height);
+    //console.log("设置了一次"+"速度是 "+runBall.v_now+"最大高度是:"+temp_height);
     runBall.max_height = temp_height;
 }
 
   function stopOrNot()
 {
-    //console.log("直径是"+2*runBall.circle.radius);
-    console.log("当前速度是"+ runBall.v_now);
-    console.log("当前总高度："+runBall.max_height);
-    //
+
     if( runBall.max_height <= Math.pow(0.1,4) && runBall.v_now<=Math.pow(0.1,2))
     {
         return true;
