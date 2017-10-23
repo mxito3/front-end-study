@@ -13,10 +13,12 @@ $(document).ready(
             var st=parseInt(step);
             $("#div2").animate({"left":"+=st+'px'"});
         }
-
             $("#leftArrow").click(
                 function()
                 {
+                    if($("#div2").is(":animated")){    //判断元素是否正处于动画状态
+                        return;
+                    }
                     if(now_picture==1)//判断是不是第一个
                     {
                         for(var i=0;i<3;i++)
@@ -43,6 +45,9 @@ $(document).ready(
             $("#rightArrow").click(
                 function()
                 {
+                    if($("#div2").is(":animated")){    //判断元素是否正处于动画状态
+                        return;
+                    }
                     if(now_picture==4)//判断是不是最后一个
                     {
                         for(var i=0;i<3;i++)
@@ -101,7 +106,7 @@ $(document).ready(
         $("#div2,#leftArrow,#rightArrow,li").mouseleave(
             function()
             {
-                des=setInterval(move1,1000);
+                des=setInterval(move1,3000);
             }
         )
 
