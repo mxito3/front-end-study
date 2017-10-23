@@ -1,0 +1,10 @@
+[题目描述]
+前后端交互基础，HTML已经为你准备好了。
+
+[要求]
+1.使用Ajax技术向https://lifengjun.xin的8184端口发送一个GET请求,要求用url传参。
+2.使用Ajax技术向https://lifengjun,xin的8184端口发送一个POST请求，要求用data传递数据。
+3.并将返回的数据填到id为res的div中。
+4.textarea是一个用于调试的面板。
+5.尽量使用原生JS，精力有余可以多写一个Jquery
+*.可以尝试对原生JS进行封装

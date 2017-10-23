@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>node中的ajax请求(html5页面)</title>
+    <script src="jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+    <textarea name="" id="input" cols="30" rows="10"></textarea>
+    <button id="execution">执行</button>
+    <input type="button" value="用GET获取数据" onclick="GetDataByGET()" />
+    <input type="button" value="用POST获取数据" onclick="GetDataByPOST()" />
+    <div id="res">数据填到这里</div>
+    <script type="text/javascript">
+     function GetDataByGET(){
+        // 你的代码写在这里
+         var xmlRequest;
+         if(window.XMLHttpRequest)
+         {
+             xmlRequest=new XMLHttpRequest();
+         }
+         else
+         {
+            //xmlRequest=new ActiveXObject("Microsoft.XMLHTTP");
+         }
+         xmlRequest.onreadystatechange=function a()
+         {
+             alert("aa");
+             if (xmlRequest.readyState==4 && xmlRequest.status==200)
+             {
+                 document.getElementById("res").innerHTML=  xmlRequest.responseText;
+             }
+         }
+         xmlRequest.open("GET","https://lifengjun.xin:8184/Yapie",true);
+         xmlRequest.send();
+    }
+    function GetDataByPOST() {
+        // 你的代码写在这里
+
+        //第四种写法（带json数据）
+        $.ajax({
+            url:"https://lifengjun.xin:8184/",
+            type:"POST",
+            data:{
+                "name": "op",
+                "url": "op"
+            },
+            cache:false,
+            dataType:"text",//纯文本
+            //contentType:"application/json",
+            success:function(data){
+                alert("成功了");
+                document.getElementById("res").innerHTML = data;
+            },
+            error:function(XMLHttpRequest, textStatus, errorThrown){
+                alert(textStatus+"1");
+                alert( errorThrown+"2");
+                alert(XMLHttpRequest+"3");
+            }
+        });
+        document.getElementById("execution").addEventListener("click", function () {
+            eval(document.getElementById("input").value);
+        });
+    }
+</script>
+</body>
+</html>

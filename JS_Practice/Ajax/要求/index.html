@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>node中的ajax请求(html5页面)</title>
+</head>
+<body>
+
+    <textarea name="" id="input" cols="30" rows="10"></textarea>
+    <button id="execution">执行</button>
+    <input type="button" value="用GET获取数据" onclick="GetDatabyGET()" />
+    <input type="button" value="用POST获取数据" onclick="GetDatabyPOST()" />
+    <div id="res">数据填到这里</div>
+    <script type="text/javascript">
+     function GetDatabyGET(){
+        // 你的代码写在这里
+        
+    }
+    function GetDatabyPOST(){
+        // 你的代码写在这里
+        
+
+    }
+
+    document.getElementById("execution").addEventListener("click", function(){
+       eval(document.getElementById("input").value);
+   });
+
+</script>
+</body>
+</html>
